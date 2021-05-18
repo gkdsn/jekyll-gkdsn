@@ -1,10 +1,9 @@
 ---
 layout: default
 ---
-{{ page.bg_image }}
 {% for navigation_content in page.navigation_list %}
     {{ navigation_content.link }}
 {% endfor %}
-{% for types in page.content %}
+{% for type in page.project_content %}
     {% include section_text.html %}
 {% endfor %}
