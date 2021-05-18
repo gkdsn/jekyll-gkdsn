@@ -6,10 +6,10 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "_projects/"
-    create: true # Allow users to create new documents in this collection
+    create: true
     editor:
       preview: false
-    fields: # The fields for each document, usually in front matter
+    fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
       - {label: Title, name: title, widget: string}
       - {label: Code Output Title, name: code_title, widget: code}
@@ -31,7 +31,6 @@ collections:
             name: "section_image"
             widget: "object"
             fields:
-              - { name: "section", widget: "hidden", default: "section_image"}
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string", required: false}
               - label: "Size"
@@ -42,7 +41,6 @@ collections:
             name: "section_video"
             widget: "object"
             fields:
-              - { name: "section", widget: "hidden", default: "section_video"}
               - { label: "Video", name: "video", widget: "file" }
               - { label: "Alt Text", name: "alt", widget: "string"}
               - label: "Size"
@@ -54,21 +52,17 @@ collections:
             section: "section_text"
             widget: "object"
             fields:
-              - { name: "section", widget: "hidden", default: "section_text"}
               - { label: 'Text', name: 'section_text', widget: 'markdown' }
           - label: "Gallery"
             name: "section_gallery"
             widget: "object"
             fields:
-              - { name: "section", widget: "hidden", default: "section_gallery"}
               - label: "Gallery"
                 name: "section_gallery"
-                section: "section_gallery"
                 widget: "list"
                 types:
                   - label: "Image"
                     name: "image"
-
                     widget: "object"
                     fields:
                       - { label: "Image", name: "image", widget: "image" }
