@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: master
 media_folder: "assets/uploads"
 collections:
   - name: "projects"
@@ -75,7 +76,20 @@ collections:
     files:
       - label: "Info"
         name: "info"
-        file: "info.markdown"
+        file: "info.html"
+        editor:
+          preview: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "info" }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - {label: Text, name: text, widget: markdown}
+      - label: "Enquiries"
+        name: "enquiries"
+        file: "enquiries.html"
         editor:
           preview: false
         fields:
