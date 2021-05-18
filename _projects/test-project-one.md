@@ -24,3 +24,6 @@ content:
       - type: image
         image: /assets/uploads/moodelier.png
 ---
+
+
+{{ page.navigation_list.navigation_content[0] }}
