@@ -12,14 +12,14 @@ navigation_list:
 bg_image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
 fg_image: /assets/uploads/moodelier.png
 project_content:
+  - type: section_text
+    section: section_text
+    section_text: This is some test text
   - type: section_image
     section: section_image
     image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
     alt: Image Alt Text
     size: full
-  - type: section_text
-    section: section_text
-    section_text: This is some test text
   - type: section_image
     section: section_image
     image: /assets/uploads/moodelier.png
