@@ -5,4 +5,6 @@
 layout: index
 ---
 
-This is some content that is a bit longer and this now auto updates when I save hello {{ site.title }} -- {{ site.description }} - {{ site.instagram_username }}
+Bes**pok**e website design and development
+====
+This is some other text

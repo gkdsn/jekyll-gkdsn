@@ -2,15 +2,102 @@ backend:
   name: test-repo
 media_folder: "assets/uploads"
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "_posts/"
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects/"
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
       preview: false
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project" }
+      - {label: Title, name: title, widget: string}
+      - {label: Code Output Title, name: code_title, widget: code}
+      - label: "Navigation List"
+        name: "navigation_list"
+        collapsed: false
+        widget: "list"
+        fields:
+          - { label: Navigation Content, name: navigation_content, widget: string }
+          - { label: Link, name: link, widget: string, required: false }
+      - {label: Background Image, name: bg_image, widget: image}
+      - {label: Foreground Image, name: fg_image, widget: image}
+      - label: "Content"
+        name: "content"
+        widget: "list"
+        types:
+          - label: "Image Block"
+            name: "section_image"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false}
+              - label: "Size"
+                name: "size"
+                widget: "select"
+                options: ["full", "small"]
+          - label: "Video Block"
+            name: "section_video"
+            widget: "object"
+            fields:
+              - { label: "Video", name: "video", widget: "file" }
+              - { label: "Alt Text", name: "alt", widget: "string"}
+              - label: "Size"
+                name: "size"
+                widget: "select"
+                options: ["full", "small"]
+          - label: "Text Block"
+            name: "section_text"
+            widget: "object"
+            fields:
+              - { label: 'Text', name: 'section_text', widget: 'markdown' }
+          - label: "Gallery"
+            name: "section_gallery"
+            widget: "object"
+            fields:
+              - label: "Gallery"
+                name: "section_gallery"
+                widget: "list"
+                types:
+                  - label: "Image"
+                    name: "image"
+                    widget: "object"
+                    fields:
+                      - { label: "Image", name: "image", widget: "image" }
+                      - { label: "Alt Text", name: "alt", widget: "string", required: false}
+                  - label: "Video"
+                    name: "video"
+                    widget: "object"
+                    fields:
+                      - { label: "Video", name: "video", widget: "file" }
+                      - { label: "Alt Text", name: "alt", widget: "string", required: false}
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Info"
+        name: "info"
+        file: "info.markdown"
+        editor:
+          preview: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "info" }
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - {label: Text, name: text, widget: markdown}
+  - name: 'config'
+    label: 'Config'
+    editor:
+      preview: false
+    files:
+      - label: 'Navigation'
+        name: 'navigation'
+        file: '_data/navigation.yml'
+        fields:
+          - label: 'Navigation Items'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
