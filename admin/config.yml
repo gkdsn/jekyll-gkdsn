@@ -18,7 +18,8 @@ collections:
         collapsed: false
         widget: "list"
         fields:
-          - { label: Navigation Content, name: navigation_content, widget: string }
+          - { label: Navigation Content, name: item, widget: hidden, default: nav-item }
+          - { label: Item Content, name: item_name, widget: string }
           - { label: Link, name: link, widget: string, required: false }
       - {label: Background Image, name: bg_image, widget: image}
       - {label: Foreground Image, name: fg_image, widget: image}
@@ -28,9 +29,9 @@ collections:
         types:
           - label: "Image Block"
             name: "section_image"
-            section: "section_image"
             widget: "object"
             fields:
+              - { name: "section", widget: "hidden", default: "section_image"}
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt", widget: "string", required: false}
               - label: "Size"
@@ -39,9 +40,9 @@ collections:
                 options: ["full", "small"]
           - label: "Video Block"
             name: "section_video"
-            section: "section_video"
             widget: "object"
             fields:
+              - { name: "section", widget: "hidden", default: "section_video"}
               - { label: "Video", name: "video", widget: "file" }
               - { label: "Alt Text", name: "alt", widget: "string"}
               - label: "Size"
@@ -53,11 +54,13 @@ collections:
             section: "section_text"
             widget: "object"
             fields:
+              - { name: "section", widget: "hidden", default: "section_text"}
               - { label: 'Text', name: 'section_text', widget: 'markdown' }
           - label: "Gallery"
             name: "section_gallery"
             widget: "object"
             fields:
+              - { name: "section", widget: "hidden", default: "section_gallery"}
               - label: "Gallery"
                 name: "section_gallery"
                 section: "section_gallery"
