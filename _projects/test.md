@@ -13,4 +13,6 @@ project_content:
     image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
     alt: Some Alt Text
     size: full
+  - type: section_text
+    section_text: Some text
 ---
