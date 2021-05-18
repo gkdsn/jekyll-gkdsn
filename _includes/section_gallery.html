@@ -1,1 +1,7 @@
-Gallery Section
+{% for item in include.gallery %}
+    {% if item.type == 'image' %}
+        <img src="{{ item.image }}" alt="">
+    {% elsif item.type == 'video' %}
+        <video src=""></video>
+    {% endif %}
+{% endfor %}

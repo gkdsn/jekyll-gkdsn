@@ -3,9 +3,47 @@
 ---
 // Imports
 @import 'reset';
+@import 'fonts';
+@import 'variables';
 
+header, nav, footer {
+    font-family: $code-font;
+    font-size: 12px;
+}
+header {
+    width: calc(95vw);
+    height: auto;
+    position:fixed;
+    top:$nav-margin;
+    left:$nav-margin;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-transform:uppercase;
+    a {
+        margin-bottom: 8px;
+    }
+    a:last-child {
+        margin-bottom: 0px;;
+    }
+}
+header, nav, footer {
+    a:hover {
+        text-decoration: underline;
+    }
+}
+a {
+    color: $text-color;
+}
 body {
-    background-color: red;
+    background-color: $background-color;
+    color: $text-color;
+    max-width: 100vw;
 }
 main {
     display: flex;
@@ -14,4 +52,7 @@ main {
     justify-content: center;
 
     min-height: 100vh;
+}
+img {
+    max-width:100px;
 }
