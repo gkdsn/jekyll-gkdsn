@@ -1,0 +1,21 @@
+{% assign footer = include.type %}
+<footer>
+    <div class="footer-left">
+        {% if footer == "project" %}
+            {% for item in include.navigation_list %}
+                {% if item.link %}
+                    <a class="project-nav-item" href="{{ item.link }}" target="_blank">{{ item.item_name }}</a>
+                {% else %}
+                    <span class="project-nav-item">{{ item.item_name }}</span>
+                {% endif %}
+            {% endfor %}
+        {% elsif footer == "info" %}
+            <span>Info</span>
+        {% else %}
+            <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank">Instagram</a>
+        {% endif %}
+    </div>
+    <div class="footer-right">
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+</footer>

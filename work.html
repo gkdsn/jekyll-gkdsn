@@ -1,7 +1,17 @@
 ---
 layout: default
+footer: default
 ---
+<section>
+    {% for item in site.projects %}
+        <a href="{{ item.url }}" id="{{ item.title | slugify }}"><h1>{{ item.code_title.code }}</h1></a>
+    {% endfor %}
+    {% for item in site.projects %}
+        <img src="{{ item.fg_image }}" alt="" class="{{ item.title | slugify }}">
+        <img src="{{ item.bg_image }}" alt="" class="{{ item.title | slugify }}">
+    {% endfor %}
+</section>
 
-{% for item in site.projects %}
-    <a href="{{ item.url }}">{{ item.title }}</a>
-{% endfor %}
+{% include footer.html 
+    type=page.footer
+%}
