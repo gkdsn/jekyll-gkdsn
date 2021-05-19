@@ -2,23 +2,62 @@
 #These are required for Jekyll to read the file as sass
 ---
 // Imports
+@import 'normalize';
 @import 'reset';
 @import 'fonts';
 @import 'variables';
+@import 'typography';
 
-header, nav, footer {
-    font-family: $code-font;
-    font-size: 12px;
+a {
+    color: $text-color;
 }
-header {
-    width: calc(95vw);
+body {
+    background-color: $background-color;
+    color: $text-color;
+    max-width: 100vw;
+    font-family: $main-font;
+}
+section {
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    * {
+        margin-bottom: 24px;
+    }
+    *:last-child {
+        margin-bottom: 0px;
+    }
+}
+.text-section {
+    padding: 5vw 10vw;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    max-width:100px;
+}
+
+//Header and Footer
+header, footer {
+    width: 100vw;
     height: auto;
     position:fixed;
     top:$nav-margin;
-    left:$nav-margin;
+    left:0;
+    padding: 0 $nav-margin;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+}
+footer {
+    top: auto;
+    bottom: $nav-margin;
 }
 nav {
     display: flex;
@@ -32,27 +71,24 @@ nav {
         margin-bottom: 0px;;
     }
 }
-header, nav, footer {
-    a:hover {
-        text-decoration: underline;
-    }
-}
-a {
-    color: $text-color;
-}
-body {
-    background-color: $background-color;
-    color: $text-color;
-    max-width: 100vw;
-}
-main {
+.footer-left, .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 100vh;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-transform:uppercase;
+    .project-nav-item {
+        margin-bottom: 8px;
+    }
+    .project-nav-item:last-child {
+        margin-bottom: 0px;
+    }
 }
-img {
-    max-width:100px;
+.footer-left {
+    align-items: flex-start;
+}
+header, nav, footer {
+    a:hover {
+        font-style: italic;
+    }
 }

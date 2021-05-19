@@ -1,5 +1,11 @@
 ---
 layout: default
+footer: default
 ---
+<section class="text-section">
+    {{ content }}
+</section>
 
-{{ content }}
+{% include footer.html 
+    type="default"
+%}

@@ -4,7 +4,7 @@ layout: default
 
 {% for item in page.project_content %}
     {% if item.type %} 
-        {% include {{ item.type }}.html 
+        {% include {{ item.type | append: '.html'}}
             text=item.section_text
             image=item.image
             alt=item.alt
@@ -24,3 +24,8 @@ layout: default
     {{ item.item_name }}
 {% endfor %}
 {%- endcomment -%}
+
+{% include footer.html 
+    navigation_list=page.navigation_list
+    type='project'
+%}

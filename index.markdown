@@ -1,6 +1,7 @@
 ---
 layout: index
+footer: default
 ---
 
-Bes**pok**e website design and development
+Be**spok**e w**eb** d**esi**gn an**d dev**elopm**en**t
 ====
