@@ -2,41 +2,34 @@
 layout: project
 title: Test
 code_title:
-  code: This is some test code
+  code: |-
+    <span>M</span>
+    <span>o</span>
+    <strong>
+      <span>o</span>
+      <span>d</span>
+      <span>e</span>
+      <span>l</span>
+    </strong>
+    <span>i</span>
+    <span>e</span>
+    <span>r</span>
 navigation_list:
   - item: nav-item
-    item_name: Nav Item One
-    link: https://google.com
+    item_name: Collab with Studio Nari
+    link: https://studionari.co.uk
   - item: nav-item
-    item_name: Nav Item Two
-bg_image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
-fg_image: /assets/uploads/moodelier.png
+    item_name: Development & Design Supper
+  - item: nav-item
+    item_name: Webflow Ecommerce
+  - item: nav-item
+    item_name: Moodelier.com
+    link: https://moodelier.com
+bg_image: /assets/uploads/bg-image.jpg
+fg_image: /assets/uploads/fg-image.png
 project_content:
-  - type: section_image
-    section: section_image
-    image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
-    alt: Image Alt Text
-    size: full
-  - type: section_text
-    section: section_text
-    section_text: This is some test text
-  - type: section_image
-    section: section_image
-    image: /assets/uploads/moodelier.png
-    alt: ""
-    size: small
-  - type: section_video
-    section: section_video
-    video: /assets/uploads/moodelier.png
-    alt: This would be a video
-    size: full
-  - type: section_gallery
-    section: section_gallery
-    section_gallery:
-      - type: image
-        image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
-      - type: image
-        image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
-      - type: image
-        image: /assets/uploads/6014b7aa461ffe4e723022ad_untitled-3-2.jpg
+  - type: section_duo-image
+    m_name: Test Duo Image
+    image-l: /assets/uploads/purple.jpg
+    image-r: /assets/uploads/green.jpg
 ---
