@@ -19,7 +19,7 @@ navigation_list:
     item_name: Collab with Studio Nari
     link: https://studionari.co.uk
   - item: nav-item
-    item_name: Development & Design Supper
+    item_name: Development & Design Support
   - item: nav-item
     item_name: Webflow Ecommerce
   - item: nav-item
