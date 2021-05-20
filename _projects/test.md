@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Test
+title: Moodelier
 code_title:
   code: |-
     <span>M</span>
