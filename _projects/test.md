@@ -32,4 +32,29 @@ project_content:
     m_name: Test Duo Image
     image-l: /assets/uploads/purple.jpg
     image-r: /assets/uploads/green.jpg
+  - type: section_image
+    m_name: Test Full Image
+    image: /assets/uploads/bg-image.jpg
+    size: full
+  - type: section_image
+    m_name: Test Small Image
+    image: /assets/uploads/purple.jpg
+    size: small
+  - type: section_text
+    section_text: Maecenas dapibus id est quis facilisis. Pellentesque gravida augue
+      leo, in mollis massa maximus sit amet. Mauris luctus quis sem at rutrum.
+      Vestibulum eu quam vitae ligula convallis efficitur quis sit amet orci.
+      Mauris ut libero accumsan, aliquam sapien tempus, efficitur urna. Integer
+      vitae nunc neque. Duis tempor tellus et lacinia auctor. Nullam condimentum
+      enim quis orci commodo volutpat. Nunc maximus lacinia augue eget finibus.
+      Cras quam lacus, suscipit at dolor id, egestas volutpat dolor.
+  - type: section_gallery
+    m_name: Moodelier Gallery
+    section_gallery:
+      - type: image
+        image: /assets/uploads/test-gallery.jpg
+      - type: video
+        video: /assets/uploads/qa-purple.mp4
+      - type: image
+        image: /assets/uploads/test-gallery.jpg
 ---
