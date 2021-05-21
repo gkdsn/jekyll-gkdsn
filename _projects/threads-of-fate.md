@@ -7,7 +7,7 @@ code_title:
     <span>h</span>
     <span>r</span>
     <strong>
-      <span>r</span>
+      <span>e</span>
       <span>a</span>
       <span>d</span>
     </strong>
