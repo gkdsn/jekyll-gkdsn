@@ -12,10 +12,10 @@ code_title:
       <span>d</span>
     </strong>
     <span>s</span>
-    <span> </span>
+    <span class="space"> </span>
     <span>o</span>
     <span>f</span>
-    <span> </span>
+    <span class="space"> </span>
     <strong>
       <span>F</span>
       <span>a</span>
