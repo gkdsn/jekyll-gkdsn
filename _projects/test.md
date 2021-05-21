@@ -25,7 +25,7 @@ navigation_list:
   - item: nav-item
     item_name: Moodelier.com
     link: https://moodelier.com
-bg_image: /assets/uploads/bg-image.jpg
+bg_image: /assets/uploads/moodelier-bg-image.jpg
 fg_image: /assets/uploads/fg-image.png
 project_content:
   - type: section_duo-image
