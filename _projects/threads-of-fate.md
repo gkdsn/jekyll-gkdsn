@@ -33,6 +33,6 @@ navigation_list:
   - item: nav-item
     item_name: thethreadsoffate.com
     link: https://thethreadsoffate.com
-bg_image: /assets/uploads/tof-fg_image.png
-fg_image: /assets/uploads/tof-bg-image.jpg
+bg_image: /assets/uploads/tof-bg-image.jpg
+fg_image: /assets/uploads/tof-fg_image.png
 ---
