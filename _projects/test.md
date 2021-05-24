@@ -5,12 +5,10 @@ code_title:
   code: |-
     <span>M</span>
     <span>o</span>
-    <strong>
-      <span>o</span>
-      <span>d</span>
-      <span>e</span>
-      <span>l</span>
-    </strong>
+    <span>o</span>
+    <span>d</span>
+    <span>e</span>
+    <span>l</span>
     <span>i</span>
     <span>e</span>
     <span>r</span>
