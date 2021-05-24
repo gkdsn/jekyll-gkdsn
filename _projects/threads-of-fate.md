@@ -6,20 +6,16 @@ code_title:
     <span>T</span>
     <span>h</span>
     <span>r</span>
-    <strong>
-      <span>e</span>
-      <span>a</span>
-      <span>d</span>
-    </strong>
+    <span>e</span>
+    <span>a</span>
+    <span>d</span>
     <span>s</span>
     <span class="space"> </span>
     <span>o</span>
     <span>f</span>
     <span class="space"> </span>
-    <strong>
-      <span>F</span>
-      <span>a</span>
-    </strong>
+    <span>F</span>
+    <span>a</span>
     <span>t</span>
     <span>e</span>
 navigation_list:
