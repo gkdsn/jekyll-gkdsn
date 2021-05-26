@@ -1,0 +1,49 @@
+section.project-hero {
+    width:100%;
+    background-size: cover;
+    position: relative;
+    h1 {
+        mix-blend-mode: difference;
+        z-index:10;
+    }
+    img {
+        position:absolute;
+        z-index:9;
+        max-width: 480px;
+        max-height: 480px;
+    }
+}
+section.project-section {
+    min-height: 100vh;
+    overflow:hidden;
+    max-height: 100vh;
+}
+.section_image {
+    &.small {
+        img {
+            max-width: 60vw;
+            max-height: 70vh;
+        }
+    }
+    &.full {
+        img {
+            max-width: 100%;
+            min-width:100%;
+            min-height:100%;
+            object-fit: cover;
+        }
+    }
+}
+.section_duo-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 15vw;
+    column-gap: 5vw;
+    img {
+        max-width: 100%;
+    }
+}
+.section_text {
+    padding: 0 10vw;
+    font-size: 32px;
+}
