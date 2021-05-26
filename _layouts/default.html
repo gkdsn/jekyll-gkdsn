@@ -10,12 +10,17 @@
   <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png" id="icon">
   <link type="text/css" rel="stylesheet" href="/assets/css/app.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     {% include header.html %}
   <main role="main">
     {{ content }}
   </main>
+{% include cursors.html %}
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {

@@ -2,15 +2,33 @@
 layout: default
 footer: default
 ---
-<section>
+<section class="work-list">
+
     {% for item in site.projects %}
-        <a href="{{ item.url }}" id="{{ item.title | slugify }}"><h1>{{ item.code_title.code }}</h1></a>
-    {% endfor %}
-    {% for item in site.projects %}
-        <img src="{{ item.fg_image }}" alt="" class="{{ item.title | slugify }}">
-        <img src="{{ item.bg_image }}" alt="" class="{{ item.title | slugify }}">
+        {% if forloop.last != true %}
+            <a href="{{ item.url }}" class="project-title" id="{{ item.title | slugify }}">
+                <div class="work-item">
+                    {{ item.code_title.code }}
+                </div>
+            </a>
+            <div class="work-item">
+                <span>•</span>
+            </div>
+        {% else %}
+            <a href="{{ item.url }}" class="project-title" id="{{ item.title | slugify }}">
+                <div class="work-item">
+                    {{ item.code_title.code }}
+                </div>
+            </a>
+        {% endif %}
     {% endfor %}
 </section>
+<div class="imageboard">
+    {% for item in site.projects %}
+        <img src="{{ item.fg_image }}" alt="" class="hover-image fg-image {{ item.title | slugify }}">
+        <img src="{{ item.bg_image }}" alt="" class="hover-image bg-image {{ item.title | slugify }}">
+    {% endfor %}
+</div>
 
 {% include footer.html 
     type=page.footer
