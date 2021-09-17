@@ -1,9 +1,0 @@
-{% for item in include.gallery %}
-    {% if item.type == 'image' %}
-        <img src="{{ item.image }}" alt="">
-    {% elsif item.type == 'video' %}
-        <video playsinline autoplay loop muted>
-            <source src="{{ item.video }}" type="video/mp4">
-        </video>
-    {% endif %}
-{% endfor %}
