@@ -22,7 +22,6 @@ $('.js-img').each(function() {
     
 
 let i = 0;
-console.log(imgSrcs)
 const images = imgSrcs.map(
     (src) => {
     const image = document.createElement("img");

@@ -113,6 +113,20 @@ footer {
         justify-content: flex-start;
     }
 }
+.mailto {
+    background-color: $text-color;
+    color: $background-color;
+    a {
+        color: $background-color;
+    }
+}
+.mailto:hover {
+    background-color: $background-color;
+    color: $text-color;
+    a {
+        color:$text-color;
+    }
+}
 @keyframes tickerTape {
     0% {
         transform: translateX(0%)
