@@ -1,5 +1,4 @@
 ---
-#These are required for Jekyll to read the file as sass
 ---
 // Imports
 @import 'normalize';
@@ -163,4 +162,49 @@ footer {
     color: $text-color;
     mix-blend-mode: difference;
     text-transform: uppercase;
+}
+.tablet-image-board {
+    display:none;
+    max-height: 100vh;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+.tablet-image {
+    width: 20vw;
+    top:0;
+    left:0;
+    position:absolute;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    transition: transform 3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+// canvas {
+//     display:none;
+// }
+
+@media only screen and (max-width: 991px) { /* Mid Size */
+    canvas, div.cursors {
+        display:none;
+    }
+    .tablet-image-board {
+        display: block;
+    }
+    .click-text {
+        display:none;
+    }
+    .tablet-image {
+        width: 25vw;
+    }
+}
+@media only screen and (max-width: 780px) { /* Tablet */
+
+}
+@media only screen and (max-width: 600px) { /* Mobile */
+
+    .tablet-image {
+        width: 60vw;
+    }
+}
+@media only screen and (max-width: 420px) { /* Mobile Tiny */
+
 }

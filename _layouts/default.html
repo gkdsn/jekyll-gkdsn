@@ -21,7 +21,7 @@
 </head>
 <body class='click'>
   <div class="hidden-images">
-    {% for i in (1..32) %}
+    {% for i in (1..27) %}
       <img class="hidden js-img" src="/assets/images/intro/image{{ i }}.jpg" alt="">
     {% endfor %}
   </div>
@@ -30,10 +30,16 @@
   {% include footer.html %}
   <main role="main">
     {{ content }}
+    <div class="tablet-image-board">
+      {% for i in (1..27) %}
+        <img class="tablet-image js-tablet-image" src="/assets/images/intro/image{{ i }}.jpg" alt="">
+      {% endfor %}
+    </div>
   </main>
   <canvas></canvas>
 		
 	<script src="/assets/scripts/canvas.js"></script>
+	<script src="/assets/scripts/images.js"></script>
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
