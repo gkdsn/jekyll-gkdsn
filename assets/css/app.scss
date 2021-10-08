@@ -40,7 +40,7 @@ header, footer {
     border-bottom: 1px solid $background-color;
     display: flex;
     justify-content: space-between;
-    z-index:100;
+    z-index:999;
     text-transform: uppercase;
     line-height: 1;
     cursor: auto;
