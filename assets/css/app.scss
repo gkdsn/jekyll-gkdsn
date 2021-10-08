@@ -40,9 +40,10 @@ header, footer {
     border-bottom: 1px solid $background-color;
     display: flex;
     justify-content: space-between;
-    z-index:9999;
+    z-index:100;
     text-transform: uppercase;
     line-height: 1;
+    cursor: auto;
     a:hover {
         font-style: italic;
     }
@@ -177,6 +178,12 @@ footer {
     position:absolute;
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
     transition: transform 3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.cookiebanner {
+    padding: 8px 16px !important;
+    border-top: 1px solid $background-color;
+    bottom: 24px !important;
+    cursor: auto;
 }
 // canvas {
 //     display:none;
