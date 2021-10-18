@@ -1,0 +1,229 @@
+backend:
+  name: git-gateway
+  branch: beta
+media_folder: "assets/uploads"
+site_url: https://georgekerridge.com
+logo_url: https://beta.georgekerridge.com/assets/images/cms-logo.svg
+display_url: https://georgekerridge.com
+local_backend:
+  # when using a custom proxy server port
+  url: http://localhost:4000/
+  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+  allowed_hosts: ['192.168.0.1']
+publish_mode: editorial_workflow
+collections:
+  - name: "projects"
+    label: "Projects"
+    label_singular: "Project"
+    identifier_field: '{{fields.title}}'
+    folder: "_projects/"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: project }
+      - { label: Project Title, name: title, widget: string }
+      - { label: SEO Description, name: seo, widget: text }
+      - label: Project Content
+        label_singular: Content
+        name: projectContent
+        widget: list
+        types:
+          - label: "Carousel"
+            name: "_section_carousel"
+            widget: "object"
+            summary: "{{fields.meaningful}}"
+            fields:
+              - { label: "Meaningful Name", name: "meaningful", widget: "string", hint: This will make organising the content easier}
+              - { label: "Description", name: "desc", widget: "string", required: false}
+              - { label: "Background Image", name: "background", widget: "image", required: false }
+              - label: Carousel Content
+                label_singular: Content
+                name: carousel
+                widget: list
+                types:
+                  - label: "Image"
+                    name: "image"
+                    widget: "object"
+                    fields:
+                      - { label: "Image", name: "image", widget: "image" }
+                      - { label: "Alt", name: "alt", widget: "string", required: false}
+                  - label: "Video"
+                    name: "video"
+                    widget: "object"
+                    fields:
+                      - { label: "Video", name: "video", widget: "file" }
+                      - { label: "Alt", name: "alt", widget: "string", required: false}
+          - label: "Image"
+            name: "_section_image"
+            widget: "object"
+            summary: "{{fields.meaningful}}"
+            fields:
+              - { label: "Meaningful Name", name: "meaningful", widget: "string", hint: This will make organising the content easier}
+              - { label: "Description", name: "desc", widget: "string", required: false}
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string", required: false}
+              - { label: "Background Image", name: "background", widget: "image", required: false }
+          - label: "Video"
+            name: "_section_video"
+            widget: "object"
+            summary: "{{fields.meaningful}}"
+            fields:
+              - { label: "Meaningful Name", name: "meaningful", widget: "string", hint: This will make organising the content easier}
+              - { label: "Description", name: "desc", widget: "string", required: false}
+              - { label: "Video", name: "video", widget: "file" }
+              - { label: "Alt", name: "alt", widget: "string", required: false}
+              - { label: "Background Image", name: "background", widget: "image", required: false }
+          - label: "Text"
+            name: "_section_text"
+            widget: "object"
+            summary: "{{fields.meaningful}}"
+            fields:
+              - { label: "Meaningful Name", name: "meaningful", widget: "string", hint: This will make organising the content easier}
+              - { label: "Description", name: "desc", widget: "string", required: false}
+              - label: Info List
+                name: info
+                widget: list
+                label_singular: Info Item
+                fields:
+                  - { label: Top faded text, name: top, widget: string }
+                  - { label: Bottom Key Text, name: bottom, widget: string }
+              - { label: "Copy", name: "copy", widget: "markdown", required: false}
+              - { label: "Link Text", name: "link_copy", widget: "string", required: false}
+              - { label: "Link URL", name: "link_url", widget: "string", required: false}
+          - label: "Statistics"
+            name: "_section_stats"
+            widget: "object"
+            summary: "{{fields.meaningful}}"
+            fields:
+              - { label: "Meaningful Name", name: "meaningful", widget: "string", hint: This will make organising the content easier}
+              - { label: "Description", name: "desc", widget: "string", required: false}
+              - label: Statistic
+                name: stat
+                widget: list
+                label_singular: Statistic Item
+                fields:
+                  - { label: Icon/Image, name: svg, widget: text, hint: "Input the svg code without a fill" }
+                  - { label: Top Key text, name: top, widget: string }
+                  - { label: Bottom faded Text, name: bottom, widget: string }
+      - label: "Colours"
+        name: colours
+        widget: "object"
+        fields:
+          - { label: 'Foreground Colour', name: 'foreground', widget: 'color' }
+          - { label: 'Background Colour', name: 'background', widget: 'color' }
+          - label: Light or dark text
+            name: text
+            widget: select
+            options:
+              - { label: "Light Text", value: "light" }
+              - { label: "Dark Text", value: "dark" }
+            default: dark
+      - label: "Index Settings"
+        name: index
+        widget: "object"
+        fields:
+          - { label: 'Coming Soon Text', name: 'coming_soon', widget: 'string', required: false, hint: "If this is filled in it will disable the link" }
+          - label: Featured Images
+            label_singular: Image
+            name: images
+            widget: list
+            min: 3
+            max: 3
+            summary: '{{fields.alt}}'
+            fields:
+              - { label: Image, name: img, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+          - { label: Background Image, name: background_image, widget: image }
+          - { label: Excerpt, name: excerpt, widget: text, hint: "This shows in the footer scroller" }
+  - label: "Main Pages"
+    label_singular: "Page"
+    name: "pages"
+    files:
+      - label: "Homepage"
+        name: "index"
+        file: "index.markdown"
+        editor:
+          preview: false
+        fields:
+          - {label: Page Name, name: title, widget: string, default: "Home"}
+          - {label: SEO Page Description, name: seo-description, widget: string, required: false}
+          - label: Homepage Image Feature
+            name: intro
+            widget: object
+            collapsed: false
+            summary: Use this for the mouse movement homepage feature
+            fields:
+              - { label: Hover Text, name: text, widget: string, default: Click }
+              - { label: Background Text, name: background_text, widget: string, default: Move your mouse around and click }
+              - label: Homepage Canvas Images
+                label_singular: Image
+                name: content
+                widget: list
+                min: 5
+                hint: Use this to change the images that display in the homepage canvas
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+          - label: Footer Items
+            label_singular: Item
+            name: footer_items
+            widget: list
+            min: 1
+            fields:
+              - { label: Footer Item, name: text, widget: string }
+          - { label: Footer Speed, name: speed, widget: number, default: 5, hint: Ticker speed in seconds, max: 20, step: 1 }
+      - label: "Work"
+        name: "work"
+        file: "work.markdown"
+        editor:
+          preview: false
+        fields:
+          - {label: Page Name, name: title, widget: string, default: "Work"}
+          - {label: SEO Page Description, name: seo-description, widget: string, required: false}
+          - {label: Default Text, name: default, widget: string, default: Hover over a project }
+          - label: Project Order
+            label_singular: Project
+            name: order
+            widget: list
+            hint: Order the projects on the work page
+            fields:
+              - { label: "Project", name: "project", widget: "relation", collection: "projects", search_fields: ["title"], display_fields: ["title"], value_field: title }
+      - label: "Enquiries"
+        name: "enquiries"
+        file: "enquiries.markdown"
+        editor:
+          preview: false
+        fields:
+          - {label: Page Name, name: title, widget: string, default: "Work"}
+          - {label: SEO Page Description, name: seo-description, widget: string, required: false}
+          - {label: Main Copy, name: copy, widget: markdown }
+          - {label: Button Text, name: btn_text, widget: string }
+          - {label: Name Placeholder, name: placeholder_name, widget: string }
+          - {label: Email Placeholder, name: placeholder_email, widget: string }
+          - {label: Body Placeholder, name: placeholder_body, widget: string }
+      - label: "Info"
+        name: "info"
+        file: "info.markdown"
+        editor:
+          preview: false
+        fields:
+          - label: Info Page Content
+            label_singular: Item
+            name: infoBuilder
+            widget: list
+            fields:
+              - { label: Item Name, name: desc, widget: string} 
+              - { label: Item Body, name: body, widget: markdown} 
+  - name: secondarypages
+    label: "Secondary Pages"
+    label_singular: "Page"
+    identifier_field: '{{fields.title}}'
+    folder: "_pages/"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - {label: Page Name, name: title, widget: string}
+      - {label: Page Layout, name: layout, widget: hidden, default: secondary}
+      - {label: SEO Page Description, name: seo-description, widget: text, required: false}
+      - { label: "Page Content", name: richcontent, widget: "markdown", modes: ['rich_text'] }
