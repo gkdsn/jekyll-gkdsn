@@ -110,8 +110,8 @@ collections:
         name: colours
         widget: "object"
         fields:
-          - { label: 'Foreground Colour', name: 'foreground', widget: 'color' }
-          - { label: 'Background Colour', name: 'background', widget: 'color' }
+          - { label: 'Index BG Colour', name: 'foreground', widget: 'color' }
+          - { label: 'Page BG Colour', name: 'background', widget: 'color' }
           - label: Light or dark text
             name: text
             widget: select
