@@ -7,7 +7,8 @@ layout: default
         {{ page.copy | markdownify }}
     </div>
     <div class="enquiries-right">
-        <form id="enquiries" name="enquries" netlify>
+        <form id="enquiries" metod="POST" name="enquries" netlify-honeypot="bot-field" data-netlify="true">
+            <input type="hidden" name="bot-form">
             <input type="text" name="name" placeholder="{{ page.placeholder_name }}*" required />
             <input type="email" name="email" placeholder="{{ page.placeholder_email }}*" required />
             <textarea id="message" name="message" placeholder="{{ page.placeholder_body }}*" required></textarea>
