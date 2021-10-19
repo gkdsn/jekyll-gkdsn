@@ -1,8 +1,22 @@
+{% assign animationLength = include.animationLength %}
 <footer>
-    {% assign animationLength = 5 %}
-    {% for i in (1..10) %}
-        <div class="tickertape" style="animation-duration: {{ animationLength }}s">
-            <span>Bespoke Website Design & Development</span>
-        </div>
-    {% endfor %}
+    {% if page.layout == 'work' %}
+        {% for i in (1..12) %}
+            <div class="tickertape js-footer-ticker" style="animation-duration: 3s" data-default="{{ page.default }}">
+                <span class="js-footer-item">{{ page.default }}</span>
+            </div>
+        {% endfor %}
+    {% elsif page.layout == 'info' %}
+        {% for i in (1..40) %}
+            <div class="tickertape js-footer-ticker" style="animation-duration: 1.5s">
+                <span class="js-footer-item">{% for item in page.infoBuilder %}{% if forloop.first %}{{ item.desc }}{% endif %}{% endfor %}</span>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for i in (1..12) %}
+            <div class="tickertape" style="animation-duration: {{ animationLength }}s">
+                <span>Bespoke Website Design & Development</span>
+            </div>
+        {% endfor %}        
+    {% endif %}
 </footer>

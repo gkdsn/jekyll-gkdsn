@@ -1,10 +1,22 @@
 ---
 layout: default
-footer: enquiries
 ---
 
-{{ content }}
+<section class="enquiries">
+    <div class="enquiries-left">
+        {{ page.copy | markdownify }}
+    </div>
+    <div class="enquiries-right">
+        <form id="enquiries" name="enquries" netlify>
+            <input type="text" name="name" placeholder="{{ page.placeholder_name }}*" required />
+            <input type="email" name="email" placeholder="{{ page.placeholder_email }}*" required />
+            <textarea id="message" name="message" placeholder="{{ page.placeholder_body }}*" required></textarea>
+            <button type="submit">{{ page.btn_text }}</button>
+        </form>
+        <div class="response">
+            <p>{{ page.response }}</p>
+        </div>
+    </div>
+</section>
 
-{% include footer.html 
-    type=page.footer
-%}
+<script src="/assets/scripts/enquiries.js"></script>

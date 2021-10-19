@@ -1,12 +1,18 @@
 <header>
     <a href="/">
-        <div class="name">
-                <span>George</span>
-                <span>Kerridge</span>
+        <div class="home">
+            <span>George</span>
+            <span>Kerridge</span>
         </div>
     </a>
-    <div class="coming-soon">
-        <span>New Website Coming Q4 2021</span>
-        <span class="mailto"><a href="mailto:george@gkdsn.com">Get in touch</a></span>
+    <div class="right">
+        <div class="top">
+            <a class="nav-link{% if page.layout == 'work' or page.layout == 'project' %} current{% endif %}" href="/work">Work</a>
+            <a class="nav-link{% if page.layout == 'info' %} current{% endif %}" href="/info">Info</a>
+            <a class="nav-link js-colour-switch" href="#"><span class="invert"></span></a>
+        </div>
+        <div class="bottom">
+            <a class="nav-link{% if page.layout == 'enquiries' %} current{% endif %}" href="/enquiries">Enquiries</a>
+        </div>
     </div>
 </header>

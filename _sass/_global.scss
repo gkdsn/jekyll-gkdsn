@@ -1,0 +1,207 @@
+
+html {
+    cursor: none;
+}
+a {
+    color: $dark-color;
+}
+body {
+    background-color: $light-color;
+    color: $dark-color;
+    max-width: 100vw;
+    font-family: $main-font;
+    line-height: 1.3;
+}
+main {
+    height: auto;
+    &.not-home {
+        padding-top: 48px
+    }
+}
+.hidden {
+    position:absolute;
+    width:0px;
+    height:0px;
+}
+
+/* Button */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'], .btn {
+    background-color: rgba(0,0,0,0);
+    border:0;
+    border-bottom: 2px solid $light-color;
+    font-size: 24px;
+    cursor:pointer;
+    padding: 0 0 0px;
+    white-space: nowrap;
+    line-height: 1.2;
+    position:relative;
+    transition: border-color 0.16s linear;
+}
+/* Button Hover */
+button:hover,
+[type='button']:hover,
+[type='reset']:hover,
+[type='submit']:hover,
+.btn:hover {
+    border-color: $dark-color;
+}
+/* All Text Inputs */
+[type='color'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'],
+input:not([type]),
+textarea {
+    background-color: rgba(0,0,0,0);
+    border:0;
+    border-bottom: 1px solid $dark-color;
+    font-size: 12px;
+    font-family: $code-font;
+    text-transform: uppercase;
+    color: $dark-color;
+    padding: 0 0 4px;
+    width:100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+textarea {
+    border: 1px solid $dark-color;
+    text-transform: none;
+    color: $dark-color;
+    padding: 8px 16px;
+    min-height: 240px;
+    &::placeholder {
+        color: $dark-color;
+        font-size: 12px;
+    }
+    &:focus {
+        outline: 0;
+        border-bottom: 2px solid $dark-color;
+    }
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $dark-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $dark-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $dark-color;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $dark-color;
+}
+/* All Text Inputs Active */
+[type='color']:active,
+[type='date']:active,
+[type='datetime']:active,
+[type='datetime-local']:active,
+[type='email']:active,
+[type='month']:active,
+[type='number']:active,
+[type='password']:active,
+[type='search']:active,
+[type='tel']:active,
+[type='text']:active,
+[type='time']:active,
+[type='url']:active,
+[type='week']:active,
+input:not([type]):active {
+    border-bottom: 2px solid $dark-color;
+}
+/* All Text Inputs Focus */
+[type='color']:focus,
+[type='date']:focus,
+[type='datetime']:focus,
+[type='datetime-local']:focus,
+[type='email']:focus,
+[type='month']:focus,
+[type='number']:focus,
+[type='password']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='text']:focus,
+[type='time']:focus,
+[type='url']:focus,
+[type='week']:focus,
+input:not([type]):focus {
+  outline: 0;
+  border-bottom: 2px solid $dark-color;
+}
+select {
+  border:0;
+  margin-bottom: 8px;
+  width:100%;
+  background-color: $light-color;
+  border-bottom: 1px solid $light-color;
+}
+
+
+/* Custom Checkbox */
+.control {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin: 16px 0 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: $light-color;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control_indicator {
+  display: block !important;
+  margin-right: 8px;
+  position: relative;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  min-width:12px;
+  min-height:12px;
+  background: $light-color;
+  border: 1px solid $light-color;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: $light-color;
+}
+
+.control input:checked ~ .control_indicator {
+  background: $dark-color;
+  border-color: $dark-color;
+}
+.control_indicator:after, .control_indicator:before {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control.large {
+  font-family: $code-font;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.control.large .control_indicator {
+  width:20px;
+  height:20px;
+  min-width:20px;
+  min-height:20px;
+}

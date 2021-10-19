@@ -2,9 +2,9 @@
 layout: info
 infoBuilder:
   - desc: Info
-    body: "**I’m an independent digital designer and front end developer based in
+    body: "I’m an independent digital designer and front end developer based in
       London. I create bespoke websites that help businesses connect with their
-      customers in a unique, meaningful way.**"
+      customers in a unique, meaningful way."
   - desc: Services
     body: My services include, but are not limited to; UX/UI, Visual Design, Digital
       Art Direction, Interaction Design, Motion Design, Front-end Development,

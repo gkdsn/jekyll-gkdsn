@@ -2,3 +2,23 @@
 layout: default
 footer: default
 ---
+<div class="main-swiper">
+    <div class="swiper-wrapper">
+        {% for item in page.infoBuilder %}
+            <div class="swiper-slide" data-desc="{{ item.desc }}">
+                <div class="info-slide">
+                    {{ item.body | markdownify }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-nav-btn prev">
+        <h2>previous</h2>
+    </div>
+    <div class="swiper-nav-btn next">
+        <h2>next</h2>
+    </div>
+</div>
+<script src="/assets/scripts/mainswiper.js" defer></script>
+<script src="/assets/scripts/info.js" defer></script>

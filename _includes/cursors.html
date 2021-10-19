@@ -1,6 +1,12 @@
 <div class="cursors">
-    {% for i in (1..13) %}
-        <div><h5>Click</h5></div>
-    {% endfor %}
+    {% if page.layout == 'index' %}
+        {% for i in (1..13) %}
+            <div><h5>Click</h5></div>
+        {% endfor %}
+    {% else %}
+        {% for i in (1..5) %}
+            <div class="cursor"></div>
+        {% endfor %}
+    {% endif %}
 </div>
 <script src="/assets/scripts/cursors.js"></script>

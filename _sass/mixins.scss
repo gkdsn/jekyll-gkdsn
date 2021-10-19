@@ -1,0 +1,31 @@
+// Media Query Mixins
+@mixin breakpoint($point) {
+    @if $point == smallDesktop {
+        @media (max-width: $mq-xl) { @content ; }
+    }
+    @else if $point == tablet {
+        @media (max-width: $mq-l) { @content ; }
+    }
+    @else if $point == mobileLandscape {
+        @media (max-width: $mq-m)  { @content ; }
+    }
+    @else if $point == mobilePortrait {
+        @media (max-width: $mq-s)  { @content ; }
+    }
+}
+// Flexbox
+@mixin flex($direction, $align, $justify) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+    -webkit-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+    -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+            justify-content: $justify;
+}

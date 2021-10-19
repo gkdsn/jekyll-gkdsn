@@ -1,5 +1,5 @@
 body {
-    text-align: center;
+    text-align: left;
 }    
 strong, b {
     font-weight: bold;
@@ -8,16 +8,22 @@ em, i {
     font-style: italic;
 }
 h1 {
-    font-size: 64px;
-    font-family: $code-font;
+    font-size: 48px;
+    font-family: $main-font;
+    letter-spacing: -0.02em;
 }
-h5 {
+h2, h5 {
     font-family: $code-font;
     font-size: 12px;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 header, nav, footer {
     font-family: $code-font;
     font-size: 12px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+}
+p {
+    font-size: 20px;
+    line-height: 1.6;
 }

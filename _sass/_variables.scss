@@ -1,6 +1,8 @@
-$background-color: #101010;
-$text-color: #ffffff;
+$dark-color: #101010;
+$light-color: #ffffff;
 $highlight-color: #EFFF31;
-$nav-margin: 2.5vw;
+$header-height: 48px;
+$footer-height: 24px;
 $code-font: 'GK Code', sans-serif;
 $main-font: 'GK', sans-serif;
+$transition: cubic-bezier(0.215, 0.61, 0.355, 1);

@@ -1,0 +1,194 @@
+.transition-fade {
+    transition: 0.9s;
+    opacity:1;
+}
+html.is-animating .transition-fade {
+    opacity:0;
+}
+
+@keyframes tickerTape {
+    0% {
+        transform: translateX(0%)
+    }
+    100% {
+        transform:translateX(-100%)
+    }
+}
+
+.cursors {
+    z-index:1;
+    text-transform: uppercase;
+    div {
+        position:fixed;
+        width: 16px;
+        height: 16px;
+        top:0;
+        left:0;
+        z-index: 1;
+
+        mix-blend-mode: difference;
+        
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cursor {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background-color: $light-color;
+    }
+}
+.click-text {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    color: $light-color;
+    mix-blend-mode: difference;
+    text-transform: uppercase;
+}
+.tablet-image-board {
+    display:none;
+    max-height: 100vh;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+.tablet-image {
+    width: 20vw;
+    top:0;
+    left:0;
+    position:absolute;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    transition: transform 3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.cookiebanner {
+    padding: 8px 16px !important;
+    border-top: 1px solid $dark-color;
+    bottom: 24px !important;
+    cursor: auto;
+}
+// canvas {
+//     display:none;
+// }
+
+@media only screen and (max-width: 991px) { /* Mid Size */
+    canvas, div.cursors {
+        display:none;
+    }
+    .tablet-image-board {
+        display: block;
+    }
+    .click-text {
+        display:none;
+    }
+    .tablet-image {
+        width: 25vw;
+    }
+}
+@media only screen and (max-width: 780px) { /* Tablet */
+
+}
+@media only screen and (max-width: 600px) { /* Mobile */
+
+    .tablet-image {
+        width: 60vw;
+    }
+} 
+@media only screen and (max-width: 420px) { /* Mobile Tiny */
+
+}
+
+// Dark Mode
+body.dark {
+    //Header and Footer
+    background-color: $dark-color;
+    color: $light-color;
+    header, footer {
+        background-color: $dark-color;
+        color: $light-color;
+        border-bottom: 1px solid $light-color;
+    }
+    header:after {
+        background-color: $light-color;
+    }
+    header div span {
+        background-color: $light-color;
+        color: $dark-color;
+    }
+    .nav-link {
+        color: $light-color;
+        background-color: $dark-color;
+        border-left: 1px solid $light-color;
+    }
+    .top, .bottom {
+        @include flex(row, flex-end, flex-end);
+    }
+    footer {
+        border-top: 1px solid $light-color;
+        border-bottom: 0;
+    }
+    .tickertape {
+        span {
+            border-right: 1px solid $light-color;
+        }
+    }
+    .nav-link {
+        background-color: $dark-color;
+        color: $light-color;
+        a {
+            color: $light-color;
+        }
+    }
+    .nav-link:hover, .nav-link.current {
+        background-color: $light-color;
+        color: $dark-color;
+        a {
+            color:$dark-color;
+        }
+        .invert {
+            background-color: $dark-color;
+        }
+    }
+    span.invert {
+        background-color: $light-color;
+    }
+    .swiper-nav-btn {
+        background-color: $dark-color;
+    }
+    .swiper-nav-btn.prev {
+        border-right: 1px solid $light-color;
+    }
+    .swiper-nav-btn.next {
+        border-left: 1px solid $light-color;
+    }
+    .work-left {
+        border-right: 1px solid $light-color;
+        transition: border-color 0.25s linear;
+        &.active {
+            border-right: 1px solid $dark-color;
+        }
+    }
+    .work-right, .work-left {
+        background-color: $dark-color;
+    }
+    .work-link {
+        h1 {
+            color: rgba(255,255,255,0);
+            -webkit-text-stroke-color: rgba(0,0,0,0.32);
+        }
+        &.active {
+            h1 {
+                color: $light-color;
+                -webkit-text-stroke-color: rgba(255,255,255,0);
+            }
+        }
+        &:hover {
+            h1 {
+                color: $dark-color;
+            }
+        }
+    }
+}

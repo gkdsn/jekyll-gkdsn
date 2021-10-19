@@ -57,7 +57,6 @@ clickFunction = function(e) {
   let left = e.pageX,
       top = e.pageY,
       html = '<div class="click-text" style="left: '+ left +'px; top: '+ top +'px"><h5>Click</h5></div>';
-  $('main').append(html)
-  console.log('click')
+  $('.js-click-wrapper').append(html)
 }
 $(document).on('click', '.click', clickFunction);
