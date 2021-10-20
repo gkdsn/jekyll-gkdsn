@@ -3,7 +3,8 @@
 
 
 
-colourSwitch = function(){
+colourSwitch = function(e){
+    e.preventDefault();
     $('body').toggleClass('dark');
     if ($('body').hasClass('dark')) {
         $.cookie('dark', 'true', { expires: 1, path: '/' })

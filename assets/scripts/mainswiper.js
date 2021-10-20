@@ -1,4 +1,4 @@
-const swiper = new Swiper('.main-swiper', {
+const mainswiper = new Swiper('.main-swiper', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,

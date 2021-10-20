@@ -164,7 +164,7 @@ body.dark {
     .swiper-nav-btn.next {
         border-left: 1px solid $light-color;
     }
-    .work-left {
+    .work-left, .enquiries-left {
         border-right: 1px solid $light-color;
         transition: border-color 0.25s linear;
         &.active {

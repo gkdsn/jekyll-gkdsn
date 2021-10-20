@@ -1,0 +1,31 @@
+<div class="project-slide project-slide-carousel">
+    <div class="project-swiper project-swiper-{{ include.number }}">
+        <div class="swiper-wrapper">
+            {% for item in include.carousel %}
+            {% assign type = item.type %}
+                <div class="swiper-slide" data-desc="{{ item.desc }}">
+                    {% case type %}
+                        {% when 'image' %}
+                            <img src="{{ item.image }}" alt="{{ item.alt }}">
+                        {% when 'video' %}
+                            <video preload loop playsinline muted autoplay>
+                                <source src="{{ item.video }}" type="video/mp4">
+                            </video>
+                    {% endcase %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+const projectswiper{{ include.number }} = new Swiper('.project-swiper-{{ include.number }}', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1.5,
+    speed: 500,
+    spaceBetween: 24,
+    mousewheel: true
+    });
+</script>

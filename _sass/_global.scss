@@ -18,6 +18,10 @@ main {
         padding-top: 48px
     }
 }
+video {
+    width: 100%;
+    max-width: 100%;
+}
 .hidden {
     position:absolute;
     width:0px;
@@ -40,6 +44,12 @@ button,
     position:relative;
     transition: border-color 0.16s linear;
 }
+.btn--small {
+    font-size: 12px;
+    font-family: $code-font;
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+}
 /* Button Hover */
 button:hover,
 [type='button']:hover,
@@ -47,6 +57,12 @@ button:hover,
 [type='submit']:hover,
 .btn:hover {
     border-color: $dark-color;
+}
+.btn--small:hover {
+    border-color: $dark-color !important;
+}
+.main-swiper.light .btn--small:hover {
+    border-color: $light-color !important;
 }
 /* All Text Inputs */
 [type='color'],
@@ -204,4 +220,108 @@ select {
   height:20px;
   min-width:20px;
   min-height:20px;
+}
+
+
+//Dark Mode
+body.dark {
+    /* Button */
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'], .btn {
+        border-bottom: 2px solid $dark-color;
+        color: $light-color;
+    }
+    /* Button Hover */
+    button:hover,
+    [type='button']:hover,
+    [type='reset']:hover,
+    [type='submit']:hover,
+    .btn:hover {
+        border-color: $light-color;
+    }
+    /* All Text Inputs */
+    [type='color'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='email'],
+    [type='month'],
+    [type='number'],
+    [type='password'],
+    [type='search'],
+    [type='tel'],
+    [type='text'],
+    [type='time'],
+    [type='url'],
+    [type='week'],
+    input:not([type]),
+    textarea {
+        border-bottom: 1px solid $light-color;
+        color: $light-color;
+    }
+    textarea {
+        border: 1px solid $light-color;
+        color: $light-color;
+        &::placeholder {
+            color: $light-color;
+        }
+        &:focus {
+            border-bottom: 2px solid $light-color;
+        }
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $light-color;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+        color: $light-color;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+        color: $light-color;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        color: $light-color;
+    }
+    /* All Text Inputs Active */
+    [type='color']:active,
+    [type='date']:active,
+    [type='datetime']:active,
+    [type='datetime-local']:active,
+    [type='email']:active,
+    [type='month']:active,
+    [type='number']:active,
+    [type='password']:active,
+    [type='search']:active,
+    [type='tel']:active,
+    [type='text']:active,
+    [type='time']:active,
+    [type='url']:active,
+    [type='week']:active,
+    input:not([type]):active {
+        border-bottom: 2px solid $light-color;
+    }
+    /* All Text Inputs Focus */
+    [type='color']:focus,
+    [type='date']:focus,
+    [type='datetime']:focus,
+    [type='datetime-local']:focus,
+    [type='email']:focus,
+    [type='month']:focus,
+    [type='number']:focus,
+    [type='password']:focus,
+    [type='search']:focus,
+    [type='tel']:focus,
+    [type='text']:focus,
+    [type='time']:focus,
+    [type='url']:focus,
+    [type='week']:focus,
+    input:not([type]):focus {
+        outline: 0;
+        border-bottom: 2px solid $light-color;
+    }
+    select {
+        background-color: $light-color;
+        border-bottom: 1px solid $dark-color;
+    }
 }

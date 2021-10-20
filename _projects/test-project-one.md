@@ -31,6 +31,7 @@ projectContent:
     video: /assets/uploads/test-video.mp4
     meaningful: Test Single Video no Background
     alt: Video Alt
+    desc: Needs a description
   - type: _section_text
     meaningful: Test Text Element
     desc: Test text goes here like this
@@ -48,7 +49,7 @@ projectContent:
       consectetur erat non aliquam, arcu nibh. Mi, nunc egestas posuere amet
       risus nibh malesuada etiam arcu. Donec sed semper sodales sed rhoncus,
       integer aliquam amet.
-    link_copy: Visit Live Site
+    link_copy: Visit the Site
     link_url: https://thethreadsoffate.com
   - type: _section_stats
     meaningful: Test Statistics

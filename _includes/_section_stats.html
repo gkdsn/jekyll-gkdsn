@@ -1,0 +1,11 @@
+<div class="project-slide">
+    <div class="project-info">
+        {% for item in include.stat %}
+            <div class="project-info-item">
+                {{ item.svg }}
+                <h2>{{ item.top }}</h2>
+                <h2 class="faded stat">{{ item.bottom }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="project-slide">
+    <div class="project-info">
+        {% for item in include.info %}
+            <div class="project-info-item">
+                <h2 class="faded">{{ item.top }}</h2>
+                <h2>{{ item.bottom }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+    {{ include.copy | markdownify }}
+    {% unless include.link_copy == blank %}
+        <a href="{{ include.link_url}}" target="_blank" class="btn btn--small" style="border-color: {{ include.colour }}">{{ include.link_copy }}</a>
+    {% endunless %}
+</div>

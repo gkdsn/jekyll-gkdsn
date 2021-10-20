@@ -112,6 +112,8 @@ section.work, section.enquiries {
 .main-swiper {
     width: 100vw;
     height: calc(100vh - 72px);
+    overflow-x: hidden;
+    cursor: grab;
 }
 .swiper-nav-btn {
     position: absolute;
@@ -123,6 +125,10 @@ section.work, section.enquiries {
     @include flex(column, center, center);
     z-index: 99;
     cursor: pointer;
+    transition: width 0.3s $transition;
+    &:hover {
+        width: 17.666666vw;
+    }
 }
 .swiper-nav-btn.prev {
     border-right: 1px solid $dark-color;
@@ -130,6 +136,20 @@ section.work, section.enquiries {
 .swiper-nav-btn.next {
     right:0;
     border-left: 1px solid $dark-color;
+}
+.main-swiper.light {
+    .swiper-nav-btn {
+        color: $light-color;
+    }
+    .swiper-nav-btn.prev {
+        border-right: 1px solid $light-color;
+    }
+    .swiper-nav-btn.next {
+        border-left: 1px solid $light-color;
+    }
+    * {
+        color: $light-color;
+    }
 }
 
 //Info Page
@@ -143,7 +163,6 @@ section.work, section.enquiries {
         font-size: 24px;
         text-align: center;
     }
-    cursor: grab;
 }
 
 // Enquiries Specific
@@ -174,5 +193,51 @@ section.work, section.enquiries {
     }
     #enquiries {
         display:none;
+    }
+}
+
+// Project Page
+.project-slide {
+    width: 100%;
+    height: 100%;
+    gap: 32px;
+    padding: 40px 80px;
+    @include flex(column, center, center);
+    background-position: center center;
+    background-size: cover;
+    p {
+        font-size: 20px;
+        text-align: center;
+    }
+    cursor: grab;
+    &-carousel {
+        padding: 0 10vw;
+    }
+}
+.project-info {
+    @include flex(row, center, center);
+    &-item {
+        @include flex(column, center, center);
+        margin: 0 24px;
+        .faded {
+            opacity: 0.4;
+            margin-bottom: 8px;
+            &.stat {
+                margin-bottom:0;
+                margin-top: 8px;
+            }
+        }
+        svg {
+            margin-bottom: 16px;
+            max-width: 12px;
+        }
+    }
+}
+.project-swiper {
+    max-height: 100%;
+    overflow-y: hidden;
+    video, img {
+        width: 100%;
+        max-width: 100%;
     }
 }

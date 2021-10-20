@@ -1,3 +1,35 @@
 ---
 layout: default
 ---
+<div class="main-swiper {{ page.colours.text }}" style="background-color: {{ page.colours.background }}" data-desc="{{ page.title }}">
+    <div class="swiper-wrapper">
+        {% for item in page.projectContent %}
+            <div class="swiper-slide main-swiper-slide" data-desc="{{ item.desc }}" {% if item.background %}style="background-image: url({{ item.background }})"{% endif %}>
+                {% include {{ item.type | append: '.html' }}
+                    type=item.type
+                    carousel=item.carousel
+                    image=item.image
+                    video=item.video
+                    desc=item.desc
+                    alt=item.alt
+                    background=item.background
+                    info=item.info
+                    copy=item.copy
+                    link_copy=item.link_copy
+                    link_url=item.link_url
+                    stat=item.stat
+                    colour=page.colours.background
+                    number=forloop.index
+                %}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-nav-btn prev" style="background-color: {{ page.colours.background }}">
+        <h2>previous</h2>
+    </div>
+    <div class="swiper-nav-btn next" style="background-color: {{ page.colours.background }}">
+        <h2>next</h2>
+    </div>
+</div>
+<script src="/assets/scripts/mainswiper.js" defer></script>
+<script src="/assets/scripts/project.js" defer></script>
