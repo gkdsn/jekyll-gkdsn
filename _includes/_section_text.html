@@ -9,6 +9,10 @@
     </div>
     {{ include.copy | markdownify }}
     {% unless include.link_copy == blank %}
-        <a href="{{ include.link_url}}" target="_blank" class="btn btn--small" style="border-color: {{ include.colour }}">{{ include.link_copy }}</a>
+        {% if include.link_url %}
+            <a href="{{ include.link_url}}" target="_blank" class="btn btn--small" style="border-color: {{ include.colour }}">{{ include.link_copy }}</a> 
+        {% else %}
+            <h2>{{ include.link_copy }}</h2>
+        {% endif %}
     {% endunless %}
 </div>

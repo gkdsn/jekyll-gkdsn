@@ -6,3 +6,9 @@ mainswiper.on('transitionEnd', function () {
     }
     $('.js-footer-item').html(descText);
 });
+
+pageTransitionProject = function(e){
+    $('body').css('background-color', '')
+}
+
+$(document).on('click', 'a:not([href^="http://"]):not([href^="https://"]):not(.no-transition)', pageTransitionProject);

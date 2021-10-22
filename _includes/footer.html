@@ -15,7 +15,16 @@
     {% elsif page.layout == 'project' %}
         {% for i in (1..12) %}
             <div class="tickertape js-footer-ticker" style="animation-duration: 1.5s">
-                <span class="js-footer-item">{% for item in page.projectContent %}{% if forloop.first %}{{ item.desc }}{% endif %}{% endfor %}</span>
+                <span class="js-footer-item">
+                    {% for item in page.projectContent %}
+                        {% if forloop.first %}
+                            {% if item.desc %}
+                                {{ item.desc }}
+                            {% else %}
+                                {{ page.title }}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}</span>
             </div>
         {% endfor %}
     {% else %}

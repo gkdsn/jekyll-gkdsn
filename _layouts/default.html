@@ -16,10 +16,8 @@
   src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
   integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -53,10 +51,14 @@
     src="https://www.facebook.com/tr?id=186673789654706&ev=PageView&noscript=1"
     /></noscript>
   <!-- End Facebook Pixel Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 </head>
-<body {% if page.layout == 'index' %}class='click'{% endif %}>
-  
-
+<body class='transition-in{% if page.layout == 'index' %} click{% endif %}' {% if page.layout == 'project' %}style="background-color: {{ page.colours.background }}"{% endif %}>
+  <script>
+    if ($.cookie('dark') === 'true') {
+        $('body').addClass('dark');
+    }
+  </script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTM5TN7"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -76,17 +78,6 @@
   {% include footer.html 
     animationLength = 5  
   %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <script>
-    let schemeCookie = $.cookie('dark'),
-        featureCookie = $.cookie('feature');
-    if (schemeCookie === 'true') {
-        $('body').addClass('dark');
-    }
-    if (featureCookie === 'true') {
-        $('.homepage-feature').remove();
-    }
-  </script>
 	<script src="/assets/scripts/scripts.js"></script>
   <script type="text/javascript" id="cookiebanner"
   src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"

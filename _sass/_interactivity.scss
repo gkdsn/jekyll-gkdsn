@@ -166,7 +166,6 @@ body.dark {
     }
     .work-left, .enquiries-left {
         border-right: 1px solid $light-color;
-        transition: border-color 0.25s linear;
         &.active {
             border-right: 1px solid $dark-color;
         }
@@ -190,5 +189,80 @@ body.dark {
                 color: $dark-color;
             }
         }
+    }
+    .main-swiper.dark {
+        * {
+            color: $dark-color;
+        }
+        .swiper-nav-btn {
+            border-color: $dark-color;
+        }
+    }
+}
+body {
+    transition: background-color 0.25s linear;
+}
+.click main {
+    transition: opacity 0.8s linear;
+    transition-delay: 0.5s;
+}
+footer {
+    transition: transform 0.5s $transition;
+}
+.main-swiper {
+    transition: opacity 0.8s linear;
+    transition-delay: 0.2s;
+    opacity:1;
+}
+.swiper-nav-btn {
+    transition: transform 0.5s $transition, width 0.3s $transition, background-color 0.25s linear;
+}
+.work-left, .work-right, .enquiries-left, .enquiries-right {
+    transition: transform 1s $transition, border-color 0.25s linear;
+}
+.swiper-nav-btn.prev, .swiper-nav-btn.next {
+    transform: translate(0%, 0%);
+}
+body.transition-in {
+    &.click {
+        main {
+            opacity:0;
+        }
+    }
+    footer {
+        transform: translateY(100%);
+    }
+    .main-swiper {
+        opacity: 0;
+    }
+    .swiper-nav-btn.prev, .work-left, .enquiries-left {
+        transform: translate(-100%, 0);
+    }
+    .swiper-nav-btn.next, .work-right, .enquiries-right {
+        transform: translate(100%, 0);
+    }
+}
+body.transition-out {
+    &.click {
+        main {
+            opacity:0;
+            transition-delay: 0s;
+        }
+    }
+    footer {
+        transform: translateY(100%);
+        transition-delay: 0.5s;
+    }
+    .main-swiper {
+        opacity: 0;
+    }
+    .swiper-nav-btn {
+        transition-delay: 0.5s;
+    }
+    .swiper-nav-btn.prev, .work-left, .enquiries-left {
+        transform: translate(-100%, 0);
+    }
+    .swiper-nav-btn.next, .work-right, .enquiries-right {
+        transform: translate(100%, 0);
     }
 }

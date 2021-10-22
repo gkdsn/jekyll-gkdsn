@@ -63,6 +63,16 @@ collections:
               - { label: "Description", name: "desc", widget: "string", required: false}
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt", name: "alt", widget: "string", required: false}
+              - label: "Width"
+                name: "width"
+                widget: "select"
+                options: ["framed-full", "auto", "full"]
+                default: "framed-full"
+              - label: "Align"
+                name: "align"
+                widget: "select"
+                options: ["center", "bottom", "top"]
+                default: "center"
               - { label: "Background Image", name: "background", widget: "image", required: false }
           - label: "Video"
             name: "_section_video"
@@ -85,6 +95,7 @@ collections:
                 name: info
                 widget: list
                 label_singular: Info Item
+                required: false
                 fields:
                   - { label: Top faded text, name: top, widget: string }
                   - { label: Bottom Key Text, name: bottom, widget: string }

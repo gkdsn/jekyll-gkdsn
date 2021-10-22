@@ -12,7 +12,8 @@ layout: default
                             <a class="work-link js-work-link active" 
                             data-name="{{ project.title | slugify }}" 
                             data-desc="{{ project.index.excerpt }}" 
-                            data-colour="{{ project.colours.foreground }}"
+                            data-colour="{{ project.colours.foreground }}" 
+                            data-bg-colour="{{ project.colours.background }}"
                             href="{{ project.url }}">
                                 <h1>{{ project.title }}</h1>
                             </a>

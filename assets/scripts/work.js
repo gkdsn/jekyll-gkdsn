@@ -20,6 +20,9 @@ projectHover = function() {
 }
 
 projectLeave = function() {
+    if ($(this).hasClass('clicked')) {
+        return;
+    }
     $('.js-work-link').addClass('active');
     $textContainer.removeClass('active');
     $footerTickerItem.html(footerTickerDefault);
@@ -38,7 +41,14 @@ projectHovering = function(e) {
         $projectImageMove = $projectImages.find('.js-project-wrapper');
     $projectImageMove.css('transform', 'translateX(' + percentage + ')');
 }
+projectBackgroundChange = function(e) {
+    let colour = $(this).attr('data-bg-colour');
+    $('body').css('background-color', colour);
+    $(this).addClass('clicked');
+    projectHover();
+}
 
 $(document).on('mouseenter', '.js-work-link', projectHover);
 $(document).on('mouseleave', '.js-work-link', projectLeave);
 $(document).on('mousemove', '.js-work-link', projectHovering);
+$(document).on('click', '.js-work-link', projectBackgroundChange);

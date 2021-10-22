@@ -27,6 +27,8 @@ projectContent:
     image: /assets/uploads/test-project-image.jpg
     alt: Image Alt
     background: /assets/uploads/tof-bg-image.jpg
+    width: full
+    align: center
   - type: _section_video
     video: /assets/uploads/test-video.mp4
     meaningful: Test Single Video no Background

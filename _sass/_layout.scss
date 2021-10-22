@@ -241,3 +241,30 @@ section.work, section.enquiries {
         max-width: 100%;
     }
 }
+.single-image {
+    &.align-top {
+        justify-content: flex-start;
+        overflow-y: scroll;
+        max-height: auto;
+    }
+    &.align-bottom {
+        justify-content: flex-end;
+        padding-bottom: 0;
+    }
+    &.width-framed-full {
+        img {
+            width:100%;
+        }
+    }
+    &.width-full {
+        padding: 0;
+        img {
+            width:100%;
+        }
+    }
+    &.width-auto
+    img {
+        width: auto;
+        max-height: 100%;
+    }
+}
