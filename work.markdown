@@ -6,4 +6,5 @@ order:
   - project: Threads of Fate
   - project: Dishoom
   - project: NARI
+  - project: APOA
 ---
