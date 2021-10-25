@@ -7,5 +7,6 @@ order:
   - project: Dishoom
   - project: Moodelier
   - project: NARI
+  - project: Ewhurst Park
   - project: APOA
 ---
