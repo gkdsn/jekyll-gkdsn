@@ -9,4 +9,6 @@ order:
   - project: NARI
   - project: Ewhurst Park
   - project: APOA
+  - project: HOME
+  - project: Sony Music
 ---
