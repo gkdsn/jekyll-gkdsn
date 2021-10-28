@@ -51,4 +51,4 @@ projectBackgroundChange = function(e) {
 $(document).on('mouseenter', '.js-work-link', projectHover);
 $(document).on('mouseleave', '.js-work-link', projectLeave);
 $(document).on('mousemove', '.js-work-link', projectHovering);
-$(document).on('click', '.js-work-link', projectBackgroundChange);
+$(document).on('click', '.js-work-link-active', projectBackgroundChange);

@@ -44,7 +44,7 @@ section.work, section.enquiries {
         color: rgba(0,0,0,0);
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: rgba(0,0,0,0.32);
-        transition: color 0.25s linear, -webkit-text-stroke-color 0.1s linear;
+        transition: color 0.25s linear, -webkit-text-stroke-color 0.1s linear, opacity 0.25s linear;
     }
     &.active, &:hover {
         h1 {
@@ -72,6 +72,7 @@ section.work, section.enquiries {
     opacity: 0;
     transition: opacity 0.25s linear;
     color: $dark-color;
+    white-space: nowrap;
 }
 .work-right {
     width:100%;
@@ -100,7 +101,9 @@ section.work, section.enquiries {
     @include flex(row, center, center);
     gap: 24px;
     img {
-        width: 40vw;
+        max-width: 40vw;
+        max-height: 320px;
+        aspect-ratio: inherit;
     }
     transition: transform 0.05s linear;
 }

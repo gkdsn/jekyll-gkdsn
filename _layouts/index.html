@@ -5,8 +5,8 @@ footer: default
 
 <canvas></canvas>
 <div class="tablet-image-board">
-    {% for i in (1..27) %}
-        <img class="tablet-image js-tablet-image" src="/assets/images/intro/image{{ i }}.jpg" alt="">
+    {% for item in page.intro.content %}
+        <img class="tablet-image js-tablet-image js-img" src="{{ item.image }}" alt="">
     {% endfor %}
 </div>
 

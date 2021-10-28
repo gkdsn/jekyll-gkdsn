@@ -16,12 +16,12 @@ projectContent:
         bottom: "2020"
       - top: Studio
         bottom: Damn Fine
-    copy: "**Tangled with flora and bounded by still water, the Neoclassical Villa
+    copy: "Tangled with flora and bounded by still water, the Neoclassical Villa
       Emden peeks out above the treetops on Isola di Brissago. I worked for
       [Damn Fine](https://damnfine.com) on translating the full branding package
       created by [NARI](https://studionari.co.uk) into the digital environment
       to enhance the presence of this historic luxury hotel and botanical garden
-      on the web**"
+      on the web"
     link_copy: Live Site
     link_url: https://villaemden.com
   - type: _section_text

@@ -63,12 +63,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTM5TN7"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
-  <div class="hidden-images">
-    {% for i in (1..27) %}
-      <img class="hidden js-img" src="/assets/images/intro/image{{ i }}.jpg" alt="">
-    {% endfor %}
-  </div>
   {% include cursors.html %}
   {% include header.html %}
   <main role="main" class="transition-fade {% unless page.layout == 'index' %}not-home{% endunless %}">
@@ -76,7 +70,7 @@
   </main>
 		
   {% include footer.html 
-    animationLength = 5  
+    animationLength = 10  
   %}
 	<script src="/assets/scripts/scripts.js"></script>
   <script type="text/javascript" id="cookiebanner"

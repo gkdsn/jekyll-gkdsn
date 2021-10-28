@@ -13,7 +13,7 @@
             </div>
         {% endfor %}
     {% elsif page.layout == 'project' %}
-        {% for i in (1..12) %}
+        {% for i in (1..20) %}
             <div class="tickertape js-footer-ticker" style="animation-duration: 1.5s">
                 <span class="js-footer-item">
                     {% for item in page.projectContent %}
@@ -24,13 +24,16 @@
                                 {{ page.title }}
                             {% endif %}
                         {% endif %}
-                    {% endfor %}</span>
+                    {% endfor %}
+                </span>
             </div>
         {% endfor %}
     {% else %}
         {% for i in (1..12) %}
             <div class="tickertape" style="animation-duration: {{ animationLength }}s">
-                <span>Bespoke Website Design & Development</span>
+                {% for item in page.footer_items %}
+                    <span>{{ item.text }}</span>
+                {% endfor %}
             </div>
         {% endfor %}        
     {% endif %}
