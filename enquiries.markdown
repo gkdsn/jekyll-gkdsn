@@ -1,7 +1,10 @@
 ---
 layout: enquiries
 title: Enquiries
-copy: This is some changes
+copy: >-
+  I am currently considering new projects for December 2021. Please fill out
+  this enquiry form to get in touch about a project you have - or if you’d just
+  like to say hello!
 btn_text: Send
 placeholder_name: Your name
 placeholder_email: Your email
